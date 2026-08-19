@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Почта 24 — отправка и получение посылок, отслеживание отправлений, расчёт стоимости и поиск отделений.">
+  <title>Почта 24 — отправления, доставка и отслеживание</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+
+  <header class="site-header">
+    <div class="utility-bar">
+      <div class="container utility-inner">
+        <span>Частным клиентам</span>
+        <nav aria-label="Вспомогательная навигация">
+          <a href="#branches">Отделения</a>
+          <a href="#support">Поддержка</a>
+          <button class="link-button" type="button" data-toast="Вход в личный кабинет доступен в полной версии сервиса.">Войти</button>
+        </nav>
+      </div>
+    </div>
+
+    <div class="main-nav-wrap">
+      <div class="container main-nav">
+        <a class="brand" href="#top" aria-label="Почта 24 — на главную">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 54 38" role="img"><path d="M4 8h30l16 11-16 11H4l15-11L4 8Z" fill="currentColor"/><path d="M4 8 27 22 50 8" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>ПОЧТА <strong>24</strong></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          <span></span><span></span><span></span><span class="sr-only">Открыть меню</span>
+        </button>
+
+        <nav id="main-menu" class="primary-nav" aria-label="Основная навигация">
+          <a href="#send">Отправить</a>
+          <a href="#receive">Получить</a>
+          <a href="#services">Услуги</a>
+          <a href="#business">Для бизнеса</a>
+          <a href="#support">Помощь</a>
+        </nav>
+
+        <button class="nav-search" type="button" aria-label="Поиск по сайту" data-toast="Поиск по сайту временно недоступен.">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-image" role="img" aria-label="Курьер несёт посылку"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Доставка по всей стране</p>
+          <h1>Отправляйте посылки без лишних шагов</h1>
+          <p>Оформите отправление онлайн, получите готовую этикетку и сдайте посылку в удобном отделении.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#send">Оформить отправление</a>
+            <a class="button button-secondary" href="#services">Узнать больше</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tracking-panel" aria-labelledby="tracking-title">
+      <div class="container">
+        <div class="tracking-box">
+          <div>
+            <p class="section-kicker">Отслеживание</p>
+            <h2 id="tracking-title">Где моя посылка?</h2>
+          </div>
+          <form class="tracking-form" id="tracking-form">
+            <label class="sr-only" for="tracking-number">Трек-номер</label>
+            <input id="tracking-number" name="tracking" type="text" autocomplete="off" placeholder="Введите трек-номер, например P24-4821-7719" maxlength="32">
+            <button class="button button-red" type="submit">Проверить</button>
+          </form>
+          <p class="tracking-message" id="tracking-message" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-tools" id="services" aria-labelledby="quick-title">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <p class="section-kicker">Быстрые действия</p>
+          <h2 id="quick-title">Всё нужное для отправлений</h2>
+        </div>
+        <div class="tool-grid">
+          <a class="tool-card" href="#send">
+            <span class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span>
+            <span><strong>Отправить посылку</strong><small>Оформить и рассчитать доставку</small></span>
+          </a>
+          <a class="tool-card" href="#branches">
+            <span class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z"/><circle cx="12" cy="10" r="2"/></svg></span>
+            <span><strong>Найти отделение</strong><small>Адреса и часы работы</small></span>
+          </a>
+          <button class="tool-card" type="button" data-toast="Расчёт стоимости временно недоступен.">
+            <span class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h2m4 0h2M8 15h2m4 0h2"/></svg></span>
+            <span><strong>Рассчитать стоимость</strong><small>Цена по маршруту и весу</small></span>
+          </button>
+          <button class="tool-card" type="button" data-toast="Заказ курьера временно недоступен.">
+            <span class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+            <span><strong>Вызвать курьера</strong><small>Заберём отправление у двери</small></span>
+          </button>
+          <button class="tool-card" type="button" data-toast="Изменение адреса доступно после входа в личный кабинет.">
+            <span class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 12 4l8 8"/><path d="M6.5 10.5V20h11v-9.5M9 20v-6h6v6"/></svg></span>
+            <span><strong>Изменить адрес</strong><small>Перенаправить доставку</small></span>
+          </button>
+          <button class="tool-card" type="button" data-toast="Уведомления доступны после входа в личный кабинет.">
+            <span class="tool-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 17h12l-1.4-2V10a4.6 4.6 0 0 0-9.2 0v5L6 17Z"/><path d="M10 20h4"/></svg></span>
+            <span><strong>Уведомления</strong><small>Статусы посылок в телефоне</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature feature-light" id="send">
+      <div class="container feature-grid">
+        <button class="image-button feature-image" type="button" data-lightbox="assets/images/packing.jpg" aria-label="Увеличить фотографию упаковки посылки">
+          <img src="assets/images/packing.jpg" alt="Подготовка посылки к отправке">
+          <span>Увеличить</span>
+        </button>
+        <div class="feature-copy">
+          <p class="section-kicker">Онлайн-отправление</p>
+          <h2>Подготовьте посылку дома</h2>
+          <p>Укажите адрес, вес и способ доставки. Сервис рассчитает стоимость и сформирует этикетку, которую останется распечатать и приклеить к коробке.</p>
+          <ul class="check-list">
+            <li>Расчёт стоимости до оформления</li>
+            <li>Готовая этикетка для печати</li>
+            <li>Выбор отделения или вызов курьера</li>
+          </ul>
+          <button class="text-action" type="button" data-toast="Оформление отправления временно недоступно.">Начать оформление <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-cards" id="receive" aria-labelledby="receive-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Получение</p>
+          <h2 id="receive-title">Управляйте доставкой по пути</h2>
+          <p>Следите за отправлениями и выбирайте удобный сценарий получения.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="service-card">
+            <button class="image-button card-image" type="button" data-lightbox="assets/images/courier.jpg" aria-label="Увеличить фотографию курьера">
+              <img src="assets/images/courier.jpg" alt="Курьер с посылкой на городской улице">
+            </button>
+            <div class="card-body">
+              <h3>Доставка до двери</h3>
+              <p>Получайте посылки дома или в офисе и отслеживайте движение курьера в день доставки.</p>
+              <button class="text-action" type="button" data-toast="Настройки доставки доступны после входа в личный кабинет.">Настроить доставку <span>→</span></button>
+            </div>
+          </article>
+          <article class="service-card">
+            <button class="image-button card-image" type="button" data-lightbox="assets/images/parcels-van.jpg" aria-label="Увеличить фотографию посылок">
+              <img src="assets/images/parcels-van.jpg" alt="Посылки в автомобиле доставки">
+            </button>
+            <div class="card-body">
+              <h3>Перенаправление</h3>
+              <p>Выберите другое отделение или измените адрес, если планы поменялись до прибытия посылки.</p>
+              <button class="text-action" type="button" data-toast="Перенаправление доступно после входа в личный кабинет.">Изменить получение <span>→</span></button>
+            </div>
+          </article>
+          <article class="service-card">
+            <button class="image-button card-image" type="button" data-lightbox="assets/images/doorstep.jpg" aria-label="Увеличить фотографию доставки">
+              <img src="assets/images/doorstep.jpg" alt="Курьер доставляет коробку к дому">
+            </button>
+            <div class="card-body">
+              <h3>Бесплатные уведомления</h3>
+              <p>Получайте сообщения об основных этапах пути и не пропускайте дату выдачи или доставки.</p>
+              <button class="text-action" type="button" data-toast="Уведомления доступны после входа в личный кабинет.">Подключить уведомления <span>→</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rates" id="business" aria-labelledby="rates-title">
+      <div class="container rates-grid">
+        <div class="rates-copy">
+          <p class="section-kicker light-kicker">Тарифы</p>
+          <h2 id="rates-title">Понятная доставка для частных клиентов и бизнеса</h2>
+          <p>Три основных режима доставки закрывают большинство задач: от документов по городу до регулярных отправок интернет-магазина.</p>
+        </div>
+        <div class="rate-list">
+          <div class="rate-row"><span><strong>Обычная</strong><small>Экономичный вариант</small></span><b>от 290 ₽</b></div>
+          <div class="rate-row"><span><strong>Ускоренная</strong><small>Для срочных отправлений</small></span><b>от 490 ₽</b></div>
+          <div class="rate-row"><span><strong>Курьерская</strong><small>От двери до двери</small></span><b>от 690 ₽</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="branches" id="branches" aria-labelledby="branches-title">
+      <div class="container branches-grid">
+        <div>
+          <p class="section-kicker">Отделения</p>
+          <h2 id="branches-title">Найдите ближайший пункт обслуживания</h2>
+          <p>Введите город или улицу, чтобы увидеть отделения, пункты выдачи и доступные услуги.</p>
+          <form class="branch-form" id="branch-form">
+            <label class="sr-only" for="branch-query">Город или улица</label>
+            <input id="branch-query" type="text" placeholder="Например, Невский проспект">
+            <button class="button button-primary" type="submit">Найти</button>
+          </form>
+        </div>
+        <div class="branch-preview" aria-label="Пример результата поиска отделений">
+          <div class="map-pattern"></div>
+          <div class="branch-card">
+            <span class="pin-dot"></span>
+            <div><strong>Отделения рядом</strong><small>Покажем адреса после поиска</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice" id="support">
+      <div class="container notice-inner">
+        <div class="notice-icon" aria-hidden="true">!</div>
+        <div>
+          <h2>Осторожно: мошеннические сообщения</h2>
+          <p>Не переходите по подозрительным ссылкам из сообщений о якобы задержанной посылке. Проверяйте статус только по трек-номеру на официальном сайте службы.</p>
+        </div>
+        <button class="text-action dark" type="button" data-toast="Раздел безопасности временно недоступен.">Подробнее о безопасности <span>→</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 54 38"><path d="M4 8h30l16 11-16 11H4l15-11L4 8Z" fill="currentColor"/><path d="M4 8 27 22 50 8" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>ПОЧТА <strong>24</strong></span></a>
+        <p>Отправления, доставка и отслеживание в одном месте.</p>
+      </div>
+      <div class="footer-column"><strong>Клиентам</strong><a href="#send">Отправить</a><a href="#receive">Получить</a><a href="#branches">Отделения</a></div>
+      <div class="footer-column"><strong>Сервисы</strong><a href="#services">Отслеживание</a><a href="#business">Тарифы</a><a href="#support">Безопасность</a></div>
+      <div class="footer-column"><strong>Информация</strong><button type="button" data-toast="Раздел поддержки временно недоступен.">Поддержка</button><button type="button" data-toast="Раздел документов временно недоступен.">Документы</button><button type="button" data-toast="Раздел вакансий временно недоступен.">Вакансии</button></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Почта 24.</span>
+      <a href="https://github.com/vladshulga-dev" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="lightbox" id="lightbox">
+    <button class="lightbox-close" type="button" aria-label="Закрыть просмотр">×</button>
+    <img src="" alt="Увеличенное изображение">
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
